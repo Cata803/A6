@@ -1,13 +1,13 @@
 # Group A6 - Student Simulator
 
-Tasks
+# Tasks
 
-Paul – Menu + Pause
+  Paul – Menu + Pause
 
-Cata – Player movement
+  Cata – Player movement
 
-Zara – Design(Scenes,player(face+back+left+right))
+  Zara – Design(Scenes,player(face+back+left+right))
 
-Zorah – Exam features
+  Zorah – Exam features
 
-Alberth – interacting actions
+  Alberth – interacting actions
