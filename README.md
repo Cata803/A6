@@ -2,12 +2,14 @@
 
 # Tasks
 
-  Paul – Menu + Pause
+Group task: Work on Storyline
 
-  Cata – Player movement
+Paul – Title + Menu + Introduction
 
-  Zara – Design(Scenes,player(face+back+left+right))
+Cata – School interactions
 
-  Zorah – Exam features
+Zara – Home interections
 
-  Alberth – interacting actions
+Zohreh – Any 3 Accidents
+
+Alberth – Way to Uni interactions
