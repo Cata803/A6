@@ -1,0 +1,72 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class WayToUni
+{
+public:
+	int location;  // Home = 1 Bar=2; Shop=3; University=4; Way to university=0
+	string l_name; // name of location
+	string name; // name of main character
+
+};
+
+void character_name(WayToUni & start);
+void loc(WayToUni & part2);
+void WhereAreU(WayToUni & part3);
+
+
+int main()
+{
+
+	int press;
+	WayToUni p1;
+	character_name(p1);
+	cout << "Hello, " + p1.name << endl;
+	cout << "If you want to go out to way to university press 0;" << endl;
+	while (true)
+	{
+		
+		cin >> press;
+		if (press == 9) break;
+		else
+		{
+			cout << "You are in Way to University " << endl;
+			loc(p1);
+			WhereAreU(p1);
+			cout << "You are in " + p1.l_name << endl;
+		}
+	}
+
+    return 0;
+
+}
+
+
+void character_name(WayToUni & part1)
+{
+	cout << "What is your name?" << endl;
+	cin >> part1.name;
+}
+void loc (WayToUni & part2 )
+{
+	
+
+	cout << "So, " + part2.name + " where you want to go?" << endl;
+	cout << "Back to home? (Press 1) " << endl;
+	cout << "To bar? (Press 2) " << endl;
+	cout << "To shop? (Press 3) " << endl;
+	cout << "To university? (Press 4) " << endl;
+	cin >> part2.location;
+
+}
+void WhereAreU(WayToUni & part3)
+{
+	if (part3.location == 0) { part3.l_name = "Way to University"; }
+	else if (part3.location == 1) { part3.l_name = "Home"; }
+	else if (part3.location == 2) { part3.l_name = "Bar"; }
+	else if (part3.location == 3) { part3.l_name = "Shop"; }
+	else if (part3.location == 4) { part3.l_name = "University";; }
+}
