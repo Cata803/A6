@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class /*name_of_class*/ 
+{
+public:
+
+	//code
+
+}
+
+int main()
+{
+	string quit;
+	
+	while (true)
+	{
+		
+		cin >> quit;
+
+		//code
+
+		if (quit == "q") { break; }
+
+	}
+
+
+	return 0;
+}
