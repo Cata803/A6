@@ -1,0 +1,135 @@
+// To run code on codio:
+// g++ --std=c++11 FILENAME.cpp -o PROGRAMNAME
+// ./program
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+using namespace std;
+
+//Class just for character parameters
+class character
+{
+    public:
+    int energy=2;
+    int day=1;
+    int position=1;//positions: hause=0; way to university=1;bar=2;shop=3;university=4;
+    string name = "Albert"; // just for now;
+    int age;
+    
+};
+
+//Class for 'way to university'
+class wayToUni
+{
+    public:
+    void where (int & position/*can be any*/, string & hero)
+    {
+        
+        if (position==1) // if psotion = 1 (if hero is in the )
+        {
+            cout<< "You are now in the Way To University"<<endl;
+            cout << "So "<< hero<<" if you want to go back home press: 0 "<<endl;
+            cout << "If you want to go to the Bar press: 2"<<endl;
+            cout << "If you want to go to the shop press: 3"<<endl;
+            cout << "If you want to go to the University press: 4"<<endl;
+            cin >> position ;
+        }
+       
+        
+        
+    }
+};
+
+//Class for bar and shop features
+class bar_shop
+{
+    public:
+    // BAR SIMULATION
+    string alko;
+    void bar_place (int & position, int & age,int & energy,string & alko )
+    {
+        if (position == 2 && energy >0)
+        {
+            
+            // checking if hero is under 18 if no he cant be in bar;
+            cout<< "Barmen: Welcome to my Bar!" <<endl;
+            cout << "Barmen: How old are you young man? ";
+            cin >> age ;
+            if (age<18)
+            {
+                cout << "Barmen: Sorry but you must to be 18 years old to be here."<<endl;
+                cout << "You have been kicked out from bar"<<endl;
+                position = 1;
+                energy = energy - 1;
+            }
+            else
+            {
+                cout << "Barmen: Oh, okey, so What would you like to drink?"<<endl;
+                cout << "We have: "<<endl;
+                int conti =1; // how long hero will stay in bar;
+                int lvl = 1;// level of drunkiness
+                while (conti == 1)
+                {
+                cout <<" Beer\n Hennessy\n Ciroc\n Vodka\n JD\n Captain Morgan"<<endl;
+                cout << "(just tipe name of Alcohol: )";
+                cin >> alko;
+                cout << "You drunk " << alko <<endl;
+                string c; // choice
+                
+                cout << "Barmen: something else? (yes / no)"<<endl;
+                cin >> c;
+                if (c == "yes")
+                { lvl++;if (lvl==3){cout<<"vomiting sound... you need go to bed.."<<endl; position= 1; energy=0;break; }  }
+                if (c=="no"){cout << "Barmen: Thank you, have a nice day!"<<endl; break;energy --;position = 1;}
+                
+                }
+            }
+            
+        }
+        else if (energy==0) {cout << "You have no energy left for today, go and sleep!!!"<<endl;}
+    }
+    
+    //SHOP SIMULATION
+    int nrP=11; // number of products;
+   
+    
+    vector<string> all_products = {"Juice", "2", "3"};// list for products (all)
+    
+    
+ 
+  
+    void shop_place (int position, vector<string> all_products)
+    {
+        if (position==3) 
+        {
+            cout<< "Shop-assistant: Welcome to local shop!" <<endl;
+            cout << "You are walking and choosing what to buy"<<endl;
+            cout <<  all_products[0] << endl;
+            
+        }
+    }
+    
+};
+    
+    
+    
+int main ()
+{
+    character player;
+    wayToUni place;
+    bar_shop activity;
+    while (player.day < 3)
+    {
+        cout << "Day: "<<player.day<<" Energy: " << player.energy<<"/2"<<endl;
+        place.where(player.position,player.name);
+        activity.bar_place(player.position,player.age,player.energy,activity.alko);
+       activity.shop_place(player.position, activity.all_products);
+         
+        player.day++;
+        
+    }
+    
+    return 0;
+
+}
