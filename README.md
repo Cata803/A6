@@ -15,7 +15,11 @@ Zohreh – Any 3 Accidents
 Alberth – Way to Uni interactions
 
 
-Activities:		Home-> Learn, Play, Sleep, Going out
+Activities:		
+			
+			Home-> Learn, Play, Sleep, Going out
+			
 			Way to Uni -> Go to the bar, go to a movie, shop, school
+			
 			School -> Take exam(day 10) + learn
 		
