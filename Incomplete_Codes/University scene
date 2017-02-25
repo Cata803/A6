@@ -1,0 +1,91 @@
+	// To run code on codio:
+	// g++ --std=c++11 FILENAME.cpp -o PROGRAMNAME
+	// ./program
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+#include <Windows.h>
+#include <stdlib.h>
+
+using namespace std;
+
+//Class just for character parameters
+class character
+{
+ public:
+	int energy = 2;
+	int day = 1;
+	int position; //positions: Home=1;  Gosford Street=2;  Bar=3;  Shop=4;  University=5;
+	string name = "Albert"; 
+	int age;
+
+};
+
+class University
+{
+	public:
+		void where(int & position, string & player)
+		{
+			if (position == 5)
+			{
+				cout << "You are now walking to the University..." << endl;
+				Sleep (3500);
+				system("cls");
+				cout << "Welcome to Coventry University, you are now in the main Hall, where would you like to go? " << endl;
+				cout << "1. Library " << endl;
+				cout << "2. Attend course " << endl;
+				//if (day == 10) //Not working for now,needs a fix.
+					//cout << "3. Take final exam " << endl;
+				cin >> position;
+			};
+		}
+};
+		
+
+
+
+
+
+
+int main()
+{
+	character player;
+	string name;
+	cout << "What is your character name? " << endl;
+	cin >> name;
+	cout << "Good morning " << name << ", Where would you like to go today? " << endl;
+	cout << " 1. Home " << endl;
+	cout << " 2. Gosford Street " << endl;
+	cout << " 3. To the bar " << endl;
+	cout << " 4. To the Shop " << endl;
+	cout << " 5. To the University " << endl;
+	cin >> player.position;
+	University location;
+	system("cls");
+	//while (player.day < 3)
+	{
+		cout << "Day: " << player.day << " Energy: " << player.energy << "/2" << endl;
+	//	if (player.position == 1)
+	//	{
+	//		place.where(player.position, player.name);
+	//		activity.bar_place(player.position, player.age, player.energy, activity.alko);
+	//		activity.shop_place(player.position, activity.all_products, activity.all_price, activity.nrP, activity.nr, activity.products, activity.total, player.energy);
+	//	}
+
+		if (player.position == 5) //Position 5 would be University
+		{
+			location.where(player.position, player.name);
+		}
+
+		if (player.energy == 0) 
+			{ player.day++; }
+		else 
+			{ player.day++; }
+
+	}
+
+	return 0;
+
+}
