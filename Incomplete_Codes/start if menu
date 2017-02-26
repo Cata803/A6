@@ -1,0 +1,22 @@
+#include <iostream> 
+
+using namespace std;
+
+int main()
+{
+  int option; // user's entered option will be saved in this variable
+  do //do-while loop starts here.that display menu again and again until user select to exit program
+  { 
+     //Displaying Options for the menu
+     cout << "1) start game " << endl;
+     cout << "2) Instruction " << endl;
+     cout << "3) Exit Program " << endl;
+     //Prompting user to enter an option according to menu
+     cout << "Please select an option : ";
+     cin >> option;  // taking option value as input and saving in variable "option"
+     
+     if(option == 1) // Checking if user selected option 1
+     {
+       //the game starts
+
+    
