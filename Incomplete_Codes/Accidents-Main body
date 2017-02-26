@@ -1,0 +1,122 @@
+
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+using namespace std;
+
+
+
+
+// Main Class!
+class CommonFeatures 
+{
+    public:
+//These are the attribiutes that is going to be common in the whole program!
+
+//He is able to do two activites per day.That is why we define 2 energy bar for him!
+    int energy=2;
+//We start from day 1(Monday) till day 7(Sunday)!
+    int day=1;
+//It shows where is he at the moment!Home=1; WayToUniversity=2;Bar=3;Shop=4;University=5!
+    int position;
+// Only for now.We are going to ask the user to enter their names in the main game!
+    string name = "Zohreh"; 
+         
+};
+
+
+//First accident
+
+class Accidents1
+{
+    public:
+    //missing class
+    {
+        if(day==2 && position==3 &&) //If he is on day2 which is Tuesday and also choosing the bar
+        {
+            cout<<"Really sorry mate!You are out of money!"<<endl;
+            //Bring his energy bar 1 level low
+            cout<<"You can use your credit card but there is no chance to do anything more today.If so please press 1"<<endl;
+            cout<<"Come back home and play a game.Please Press 2"<<endl;
+            //Bring his energy bar 1 level up
+            cout<<"Go to university and do do study for your final exam also get 1 extera energy!Please press 3"<<endl;
+            cin>>position;
+        }
+    }
+    
+};
+
+
+
+//Second accident
+
+class Accidents2
+{
+    public:
+    //missing class
+    {
+        if(day==4 && position==//need sleep position) //If he is on day4 which is Thursday and also choosing to sleep
+        {
+            cout<<"Really sorry mate!You have to do your university work!"<<endl;
+            cout<<"Study for your 122COM phase test.Please press 1"<<endl;
+            cout<<"Write your report for 106CR.Please press 2"<<endl;
+            cin>>position;
+            if (position==1)
+            {
+                cout<<"C++ code has to be compiled before it is run. So does Python it just happens "
+                      "automatically. Compiler converts C++ code into machine code. Many IDEs"
+                      "handle compiling for you. Visual Studio, Eclipse etc. Make you do it yourself "
+                      "in this module so you understand it. Understand what IDE is doing. "
+                      "Understand the configuration options in the IDE. Understand the error "
+                      "messages you get. Once understood then use IDEs."
+            }
+            if (position==2)
+            {
+                cout<<"Write your report here please:"<<endl;
+            }
+        }
+    }
+    
+};
+
+
+
+//Third accident
+
+class Accidents3
+{
+    public:
+    //missing class
+    {
+        if(day==6 && position==3 &&) //If he is on day6 which is Staurday and also choosing to go to movie
+        {
+            cout<<"Good news!One of your friend is here!"<<endl;
+            cout<<"Continue to go to the cinema and pay for your friends ticket.Please press 1"<<endl;
+            cout<<"Invite him to the home and play a game together.Please press 2"<<endl;
+            cin>>position;
+            if (position==1)
+            {
+                cout<<"You have to pay £10 per person that brings your energy 1 level low.Press 1 please"
+                cout<<"You still able to change your mind and invite him to the home.Press 2 please"
+                cout<<"You have two free coffee and you can invite him to drink coffee.Press 3 please"
+            }
+            if (position==2)
+            {
+                //need to connect to the home 
+            }
+        }
+    }
+    
+};
+
+
+
+//Main function
+int main ()
+{
+    
+
+    return 0;
+
+}
