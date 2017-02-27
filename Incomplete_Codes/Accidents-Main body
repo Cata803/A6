@@ -42,6 +42,19 @@ class Accidents1
             //Bring his energy bar 1 level up
             cout<<"Go to university and do do study for your final exam also get 1 extera energy!Please press 3"<<endl;
             cin>>position;
+            if (position==1)
+            {
+            energy = energy - 1   
+            }
+            else if (position==3)
+            {
+            energy = energy + 1    
+            }
+            else if (position==2)
+            {
+                //connect him to the home but only the game option
+            }
+                
         }
     }
     
@@ -89,7 +102,7 @@ class Accidents3
     public:
     //missing class
     {
-        if(day==6 && position==3 &&) //If he is on day6 which is Staurday and also choosing to go to movie
+        if(day==6 && position==3 &&) //If he is on day6 which is Staurday and also choosing to go to movie!
         {
             cout<<"Good news!One of your friend is here!"<<endl;
             cout<<"Continue to go to the cinema and pay for your friends ticket.Please press 1"<<endl;
@@ -100,6 +113,29 @@ class Accidents3
                 cout<<"You have to pay £10 per person that brings your energy 1 level low.Press 1 please"
                 cout<<"You still able to change your mind and invite him to the home.Press 2 please"
                 cout<<"You have two free coffee and you can invite him to drink coffee.Press 3 please"
+                if(position== 1)
+                {
+                cout<<"Box office cashier:Welcome!How many tickets do you want?"<<endl;
+                if (//variable fo ticket need to define==2)
+                {
+                  cout<<"Please give £20 pound for both of you"<<endl;
+                  //need to define the amount of money and give him the change
+                }
+                energy = energy - 1                     
+                }
+                else if (position==2)
+                {
+                 //change current position to home position and show him the options.   
+                }
+               else if(position=3)
+               {
+               cout<<"Your are in Starbucks.What kind of coffee do you like to drink?"<<endl;
+               cout<<"Today we have:"<<endl;
+               cout<<"Americano\n Cappuccino\n and\n  Espresso\n "<<endl;// need to add vector and while loop to check
+                   
+                   
+               }
+                
             }
             if (position==2)
             {
@@ -112,7 +148,7 @@ class Accidents3
 
 
 
-//Main function
+//need to compelete the main function
 int main ()
 {
     
