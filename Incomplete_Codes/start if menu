@@ -17,6 +17,38 @@ int main()
      
      if(option == 1) // Checking if user selected option 1
      {
-       //the game starts
+       //Display some web browsers list
+        cout << "start game" << endl;
+     }
+        
+     else if(option == 2) // Checking if user selected option 2
+     {
+       //Displaying top sites
+        cout << "instruction" << endl;
+;
+     }
+     else if(option == 3) // Checking if user selected option 3
+     {
+       //displaying top smartphone brands
+        cout << "setting" << endl;
+        
+     }
+     else if(option == 4) // Checking if user selected option 4
+     {
+       cout << "Terminating Program" << endl;
+     }
+     else //if user has entered invalid choice (other than 1,2,3 or 4)
+     {
+       //Displaying error message
+       cout << "Invalid Option entered" << endl;
+     }
+  }
+  while(option != 4);  //condition of do-while loop
+   
+   return 0;
+}
+
+
+
 
     
