@@ -1,0 +1,117 @@
+//Exam test 
+
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+#include <Windows.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main()
+{
+	char answer;
+	int score = 0;
+	char a = 'a', A = 'A', b = 'b', B = 'B', c = 'c', C = 'C', d = 'd', D = 'D';
+
+	cout << " 1.How do you print in C++? \n" << endl;
+	cout << " A. cin>> 'Hello World'; \n B. Cout << 'Hello World'; \n C. cin >> 'Hello World'<<endl; \n D. print('Hello World');";
+	cout << endl;
+	cin >> answer;
+	if (answer == B || answer == b)
+	{
+		score += 10;
+	}
+
+	cout << " 2. Which is not a loop structure? \n" << endl;
+	cout << " A. For \n B. Do while \n C. While \n D. Repeat Until";
+	cout << endl;
+	cin >> answer;
+	if (answer == d || answer == D)
+	{
+		score += 10;
+	}
+
+	cout << " 3. What punctuation ends most lines of C++ code? \n" << endl;
+	cout << " A. . \n B. ; \n C. : \n D. '  ";
+	cout << endl;
+	cin >> answer;
+	if (answer == b || answer == B)
+	{
+		score += 10;
+	}
+
+	cout << " 4.  Which of the following shows the correct syntax for an if statement? \n" << endl;
+	cout << " A. if expression \n B. if { expression \n C. if (expression) \n D. expression if  ";
+	cout << endl;
+	cin >> answer;
+	if (answer == c || answer == C)
+	{
+		score += 10;
+	}
+
+	cout << " 5. What punctuation is used to signal the beginning and end of code blocks? \n" << endl;
+	cout << " A. { } \n B. -> and \n C. BEGIN and END \n D. (and) ";
+	cout << endl;
+	cin >> answer;
+	if (answer == a || answer == A)
+	{
+		score += 10;
+	}
+
+	cout << " 6. Which of the following is not a correct variable type? \n" << endl;
+	cout << " A. float \n B. real \n C. int \n D. double ";
+	cout << endl;
+	cin >> answer;
+	if (answer == b || answer == B)
+	{
+		score += 10;
+	}
+
+	cout << " 7. Which of the following is the boolean operator for logical - 'and'? \n" << endl;
+	cout << " A. & \n B. && \n C. | \n D. | & ";
+	cout << endl;
+	cin >> answer;
+	if (answer == b || answer == B)
+	{
+		score += 10;
+	}
+
+	cout << " 8. Which of the following is a correct comment? \n" << endl;
+	cout << " A. */ Comments */ \n B. ** Comment ** \n C. /* Comment */ \n D. { Comment }";
+	cout << endl;
+	cin >> answer;
+	if (answer == c || answer == C)
+	{
+		score += 10;
+	}
+
+	cout << " 9. Which of the following is not a correct variable type? \n" << endl;
+	cout << " A. float \n B. int \n C. double \n D. real ";
+	cout << endl;
+	cin >> answer;
+	if (answer == d || answer == D)
+	{
+		score += 10;
+	}
+
+	cout << " 10. What is the correct value to return to the operating system upon the successful completion of a program? \n" << endl;
+	cout << "A. -1 \n B. 1 \n C. 0 \n D. Programs do not return a value. ";
+	cout << endl;
+	cin >> answer;
+	if (answer == c || answer == C)
+	{
+		score += 10;
+	}
+
+	cout << endl;
+	if (score >= 40)
+		cout << "Congratulations, you have passed the module with " << score << ".0/100.0 !" << endl;
+	else
+		cout << "We are sorry, you have failed the module with " << score << ".0/100.0 !" << endl;
+
+	Sleep(5000);
+}
