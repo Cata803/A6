@@ -1,5 +1,5 @@
 //Important hint:TO run the code you need to set day and position in the class CommonFeatures part to the same day and 
-//same position that I have defined in the functions.
+//same position that I have defined in the functions.(For example: day=2 and position=3 to run the first accident)
 
 
 
@@ -18,8 +18,9 @@ class CommonFeatures
 {
  public:
 	int energy= 2;
-	int day;
-	int position;  //positions: Home=1;  Gosford Street(WayToUni)=2;  Bar=3;  Shop=4;  University=5;
+	int day; //Set to 2 for the first accident,4 for the second one and 6 for the third one.
+	//positions: Home=1;  Gosford Street(WayToUni)=2;  Bar=3;  Shop=4;  University=5;
+	int position;  // Set to 3 for the first accident,1 for the second one and 2 for the third one.
 	string name = "Zohreh";
    int button;
    int movie;
