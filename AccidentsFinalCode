@@ -1,0 +1,228 @@
+//Important hint:TO run the code you need to set day and position in the class CommonFeatures part to the same day and same position 
+//that I have defined in the functions.
+
+
+
+//Libraries that we need to have.
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+//If need to use sleep function need to have these libraries.
+//#include<Windows.h>
+//#include<stdlib.h>
+using namespace std;
+
+
+class CommonFeatures
+{
+ public:
+	int energy= 2;
+	int day;
+	int position;  //positions: Home=1;  Gosford Street(WayToUni)=2;  Bar=3;  Shop=4;  University=5;
+	string name = "Zohreh";
+   int button;
+   int movie;
+   int tickets;
+   int sleep;
+    
+};
+
+
+//Main Class for all three accidents.
+class Accidents
+{   
+    // This is a feature for the class. A public member is accessible from anywhere outside the class but within a program. 
+    public:
+    
+   
+   //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+   
+    //First Accident.We need to define the parameters that we want to use in the function.
+    void ac1 (int&day,int&position,int&energy,int&button)  
+    {
+        //If he is on day 2 which is Tuesday and also choosing to go to bar!Check the day and position.
+        if(day==2 && position==3)
+        {
+            //Print these lines to the user and give him options to choose.
+            cout<<"        \n Really sorry mate!You are out of money!\n"<<endl;
+            cout<<"  ** You can use your credit card but there is no chance to do anything else today.If so please press 1. \n"<<endl;
+            cout<<"  ** Come back home and play a game.Please Press 2. \n"<<endl;
+            cout<<"  ** Go to university and do some study for your final exam also get 1 extra energy!Please press 3. \n"<<endl;
+           
+            //Receive user input and refer it to the variable which is button.
+            cin >> button;
+            //Check if the user input is equal to 1.If so must execute the statment.
+            if ( button==1)
+            {
+               //Teleport him to the bar.
+                position=3;  //Bar position
+               //bring his energy bar 1 level down.
+                energy --;
+            } 
+           // Check another condition.If the user input is equal to 2.
+            else if ( button==2)
+            {
+               //Teleport him to the home.
+               position=1; 
+             //possible to give him just game option
+            }
+             // Check another condition.If the user input is equal to 3.
+            else if ( button==3)
+            {
+               //Teleport him to the university.
+               position = 5;
+               //Bring his energy bar one level up.
+               energy ++;
+               //show him just library option at university
+            }
+                
+        }
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+    
+                                      //check the sleep position!!
+   
+    //Second Accident.We need to define the parameters that we want to use in the function.
+    void ac2 (int&day,int&position,int&sleep,int&button)
+    {
+        //If he is on day4 which is Thursday and also choosing to sleep!
+        if(day==4 && position==1) 
+        {
+            //Print these lines to the user and give him options to choose.
+            cout<<"        \n Really sorry mate!You cannot sleep now!You have to do your university work!\n"<<endl;
+            cout<<"  ** Study for your 122COM phase test.Please press 1.\n"<<endl;
+            cout<<"  ** Write your report for 106CR.Please press 2.\n"<<endl;
+            //Receive user input and refer it to the variable which is button.
+            cin>>button;
+            //Check if the user input is equal to 1.If so must execute the statment.
+            if (button==1)
+            {
+                cout<<"  C++ code has to be compiled before it is run. So does Python it just happens \n "<<endl;
+                cout<<"  automatically. Compiler converts C++ code into machine code. Many IDEs \n"<<endl;
+                cout<<"  handle compiling for you. Visual Studio, Eclipse etc. Make you do it yourself \n "<<endl;
+                cout<<"  in this module so you understand it. Understand what IDE is doing. \n"<<endl;
+                cout<<"  Understand the configuration options in the IDE. Understand the error \n "<<endl;
+                cout<<"  messages you get. Once understood then use IDEs.\n "<<endl;
+               //sleep(5000)
+               //cout<<"  That is enough for today.Thanks.<<endl;
+               //Teleport him to the main menu.
+               position==0;
+               
+            }
+            //Check if the user input is equal to 2.If so must execute the statment.
+            else if (button==2)
+            {
+               //get a string as a variable that is report. 
+                string report;
+               //Check the condition.While the length of the report is less than equal to 20 it does not let user go further.
+                while (report.length()<=20)
+                {
+                   //Show user this messages.
+                   cout<<"  Write your report here please:\n"<<endl;
+                   //Get the string again.
+                   cin >> report ;
+                   //Check the condition again.
+                   if (report.length()<=20)
+                   {
+                    //If condition was true show user this line of code.
+                    cout<<"  \nThat's not enough.Your report should be at least 20 character. \n"<<endl;
+                   }
+                }
+                //If condition was false show user this line of code.
+                cout <<"  That is OK!Thank you."<<endl;
+               //sleep(5000)
+               //Teleport him to the main menu.
+               position==0;
+            }
+        }
+    }
+    
+   //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//   
+    
+   //Third Accidents.We need to define the parameters that we want to use in the function.     
+    void ac3 (int&day,int&position,int&button,int&tickets,int&energy,int&movie)
+    {
+        //If he is on day6 which is Staurday and also choosing to go to the cinema!
+        if(day==6 && position==2) 
+        {
+            //Print these lines to the user and give him options to choose.
+            cout<<"      \n You are in the cinema now.\n"<<endl;
+            //sleep(2000);
+            cout<<"  Good news!One of your friend is here!\n"<<endl;
+            cout<<"  **  Continue to go to the cinema and pay for your friend's ticket.Please press 1.\n"<<endl;
+            cout<<"  **  Invite him to the home and play a game together.Please press 2."<<endl;
+            //Receive user input and refer it to the variable which is button.
+            cin>>button;
+            //Check if the user input is equal to 1.If so must execute the statment.
+            if (button==1)
+            {
+                //Print these lines to the user and give him options to choose.
+                cout<<"  **  You have to pay £10 per person that brings your energy 1 level down.Press 1 please.\n"<<endl;
+                cout<<"  **  You still able to change your mind and invite him to the home.Press 2 please."<<endl;
+                //Receive user input and refer it to the variable which is button.
+                cin>>button;
+                //Check if the user input is equal to 1.If so must execute the statment.
+                if(button== 1)
+                {
+                    cout<<"  Cashier: Welcome!How many tickets do you want?"<<endl;
+                    //Receive user input and refer it to the variable which is tickets.
+                    cin>>tickets;
+                   //Check while the user input is not equal to 2 must execute the statment.
+                    while (tickets!=2)
+                    {
+                       cout<<"  Entre the correct number please.You are 2 people."<<endl;
+                       cin>>tickets;
+                    }
+                   //Print this line of code in the event that user input for the variable tickets is equal to 2.
+                    cout<<"  Please give me £20 for both of you."<<endl;
+                    //sleep(3000);
+                    cout<<"  You paid £20.Thanks.Here your tickets.Enjoy the film."<<endl;
+                   // Bring his energy 1 level down.
+                    energy = energy - 1;
+                    //sleep(5000);
+                    position=1;
+                }
+                //Check if the user input is equal to 2.Teleport him to the home.
+                else if (button==2)
+                {
+                   cout<<"  You are in the home with your friend."<<endl;
+                   //Teleport him to the home.
+                   position=1;
+                }
+            }
+            //Check if the user input is equal to 2.Teleport him to the home.
+            else if (button==2)
+            {
+             cout<<"  You are in the home with your friend."<<endl;
+             //Teleport him to the home.
+             position=1;
+             //show him only game option
+            }
+        }
+
+    }           
+
+};
+
+ 
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+//MainFunction
+
+int main ()
+{
+    CommonFeatures player;
+    Accidents acc;
+
+    {
+        acc.ac1(player.day, player.position,player.button,player.energy);  
+        acc.ac2(player.day, player.position,player.button,player.sleep); 
+        acc.ac3(player.day, player.position,player.button,player.tickets,player.energy,player.movie);  
+    }
+
+    return 0;
+
+}
