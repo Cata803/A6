@@ -1,0 +1,15 @@
+//Class just for character parameters
+class character
+{
+public:
+	int energy = 2;
+	int day = 10;
+	int position; //positions: Way to Uni = 1, Bar =2 , Shop = 3, House = 4, University = 5;
+	string name = "Player";
+	int age;
+	// For accidentes to integrate with hause features
+	int button;
+	int movie;
+	int tickets;
+	int sleep;
+};
