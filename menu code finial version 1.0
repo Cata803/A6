@@ -48,7 +48,7 @@ int main()
 
             else if (choice == '3')
                {
-                   cout << "Good luck! \n\n";
+                   cout << "Good bye! \n\n";
                    waitEnter();
                }
 
