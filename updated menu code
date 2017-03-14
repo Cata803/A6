@@ -32,10 +32,15 @@ int main()
                    system ("CLS");
                    cout << " instruction\n\n ";
                    cout << "The game is about a student and a day in his life.\n\n";
+                   
                    cout << "There are certain scenarios you have to face with the student and decide what he does.\n\n";
+                   
                    cout << "In the game there will be chance for you to decide what the student does.\n\n";
+                   
                    cout << "The game will give you many options and you have to press the right keys to carry on.\n\n";
+                   
                    cout << "Good luck!"; 
+                   
                    system ("pause");
                    system ("CLS");
                }
