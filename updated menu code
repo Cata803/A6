@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+using namespace std;
+
+
+int main()
+{ 
+    while(1)
+        {
+           char choice[2];
+           
+           cout<<"::Student sumuilator::\n\n"<<endl;
+           cout<<"1. Start game \n";
+           cout<<"2. instructions \n";
+           cout<<"3. exit game \n";
+           cout<< "choice: ";
+               
+            cin>> choice;
+            
+            if (choice[0] == '1')
+              {
+                  system ("CLS");
+                  cout << " Start game ";
+                  system ("pause");
+                  system ("CLS");
+              }
+            
+            else if (choice[0] == '2')
+               {
+                   system ("CLS");
+                   cout << " instruction\n\n ";
+                   cout << "The game is about a student and a day in his life.\n\n";
+                   cout << "There are certain scenarios you have to face with the student and decide what he does.\n\n";
+                   cout << "In the game there will be chance for you to decide what the student does.\n\n";
+                   cout << "The game will give you many options and you have to press the right keys to carry on.\n\n";
+                   cout << "Good luck!"; 
+                   system ("pause");
+                   system ("CLS");
+               }
+            
+            else if (choice[0] == '3')
+               {
+                   return 0;
+               }
+            
+            else if (choice[0] > '3' || choice[0] < '1')
+               {
+                   system ("CLS");
+                   cout << " invalid input /n/n";
+                   system ("pause");
+                   system ("CLS");
+               }   
+            
+            else  
+               {
+                   system ("CLS");
+                   cout << " invalide input ";
+                   system ("pause");
+                   system ("CLS");
+               }   
+        }    
+}  
