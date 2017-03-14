@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+using namespace std;
+
+void waitEnter() {
+    system("pause");
+    system("CLS");
+}
+
+int main()
+{
+    char choice;
+    while(choice != '3')
+        {
+           cout<<"::Student sumuilator::\n\n"<<endl;
+           cout<<"1. Start game \n";
+           cout<<"2. instructions \n";
+           cout<<"3. exit game \n\n";
+           cout<< "choice: ";
+
+            cin >> choice;
+            system ("CLS");
+
+            if (choice == '1')
+              {
+                  cout << " Start game ";
+                  waitEnter();
+              }
+
+            else if (choice == '2')
+               {
+
+                   cout << " instruction\n\n ";
+                   cout << "The game is about a student and a day in his life.\n\n";
+
+                   cout << "There are certain scenarios you have to face with the student and decide what he does.\n\n";
+
+                   cout << "In the game there will be chance for you to decide what the student does.\n\n";
+
+                   cout << "The game will give you many options and you have to press the right keys to carry on.\n\n";
+
+                   cout << "Good luck! \n\n";
+
+                   waitEnter();
+               }
+
+            else if (choice == '3')
+               {
+                   cout << "Good luck! \n\n";
+                   waitEnter();
+               }
+
+            else if (choice > '3' || choice < '1')
+               {
+                   cout << " invalid input /n/n";
+                   waitEnter();
+               }
+
+            else
+               {
+                   cout << " invalide input ";
+                   waitEnter();
+               }
+        }
+
+        return 0;
+}
