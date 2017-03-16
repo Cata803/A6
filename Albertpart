@@ -1,0 +1,235 @@
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+using namespace std;
+
+//Class just for character parameters
+class character
+{
+    public:
+    int energy=2;
+    int day=1;
+    int position;//positions: hause=0; way to university=1;bar=2;shop=3;university=4;
+    string name = "Player"; // just for now;
+    int age;
+    
+};
+
+//Class for 'way to university'
+class wayToUni
+{
+    public:
+    void where (int & position/*can be any*/, string & hero)
+    {
+        
+        if (position==1) // if psotion = 1 (if hero is in the )
+        {
+            cout<< "You are now in the Way To University"<<endl;
+            cout << "So "<< hero<<" if you want to go back home press: 0 "<<endl;
+            cout << "If you want to go to the Bar press: 2"<<endl;
+            cout << "If you want to go to the shop press: 3"<<endl;
+            cout << "If you want to go to the University press: 4"<<endl;
+            cin >> position ;
+        }
+       
+        
+        
+    }
+};
+
+//Class for bar and shop features
+class bar_shop
+{
+    public:
+    // BAR SIMULATION
+    string alko;
+    void bar_place (int & position, int & age,int & energy,string & alko )
+    {
+        if (position == 2 && energy >0)
+        {
+            
+            // checking if hero is under 18 if no he cant be in bar;
+            cout<< "Barmen: Welcome to my Bar!" <<endl;
+            cout << "Barmen: How old are you young man? ";
+            cin >> age ;
+            if (age<18)
+            {
+                cout << "Barmen: Sorry but you must to be 18 years old to be here."<<endl;
+                cout << "You have been kicked out from bar"<<endl;
+                position = 1;
+                energy = energy - 1;
+            }
+            else
+            {
+                cout << "Barmen: Oh, okey, so What would you like to drink?"<<endl;
+                cout << "We have: "<<endl;
+                int conti =1; // how long hero will stay in bar;
+                int lvl = 1;// level of drunkiness
+                while (conti == 1)
+                {
+                cout <<" Beer\n Hennessy\n Ciroc\n Vodka\n JD\n Captain Morgan"<<endl;
+                cout << "(just tipe name of Alcohol: )";
+                cin >> alko;
+                while (alko != "Beer" && alko != "Hennessy" && alko != "Ciroc" && alko != "Vodka" && alko != "JD" && alko != "Captain Morgan"  ) {cout << "Check if you write it correctly and try again"<<endl;cin >> alko;}
+                cout << "You drunk " << alko <<endl;
+                string c; // choice
+                
+                cout << "Barmen: something else? (yes / no)"<<endl;
+                cin >> c;
+                if (c == "yes")
+                { lvl++;if (lvl==3){cout<<"vomiting sound... you need go to bed.."<<endl; position= 1; energy=0;break; }  }
+                if (c=="no"){cout << "Barmen: Thank you, have a nice day!"<<endl; energy --;position = 1;break;}
+                
+                }
+            }
+            
+        }
+        else if (energy==0) {cout << "You have no energy left for today, go and sleep!!!"<<endl;}
+    }
+    
+    //SHOP SIMULATION
+    int nrP=12; // number of products;
+    int nr=-1; // number of products that use used
+    
+    vector<string> all_products = {"Juice", "Coca cola", "Milk", "Noodles", "Eggs", "Chicken nuggets", "Bananas", "Apples", "Cucumber","Tomatoes", "Crisps", "Biscuits"};// list for products (all)
+    vector<double>all_price = {0.99,1.20,1.00, 0.89,1.00,2.50, 1.50,1.35, 0.50,0.60, 2.00, 1.50};//list for price of all products
+    vector<string>products = {"","","","","","","","","","","","","",""};//empty list in future there will be all product that user want
+    double total = 0.00; // total money that user need to give
+  
+    void shop_place (int & position, vector<string> all_products, vector<double> all_price, int nrP,int nr, vector<string> products, double& total, int& energy)
+    {
+        //User chosing what to buy
+        
+        if (position==3) 
+        {
+            cout<< "Shop-assistant: Welcome to local shop!" <<endl;
+            cout << "You are walking and choosing what to buy"<<endl;
+            for (int i=0 ; i<nrP ;i++)
+            {
+                string answer;
+                cout << "Do you want to buy "<< all_products[i]<<" (y/n)"<<endl;
+                cin>> answer;
+                while (answer != "y" && answer != "n"){cout << ("Please type y for yes or n for no")<<endl; cin >>answer;}
+                if (answer == "y")
+                {
+                    nr++;
+                    products[nr]= all_products[i];
+                    total = total + all_price[i];
+                    
+                }
+                
+            }
+           // if user bought something : paying
+            if (nr > -1)
+            {
+                cout << "Now you need to pay for what you bought"<<endl;
+                cout << "your receipt: "<<endl;
+                string metod;
+                for (int i=0;i<=nr;i++)
+                {
+                    cout << products[i]<<endl;
+                }
+                cout << "total : "<<total<<endl;
+                
+                cout << "Shop-assistant: How will you pay, cash or credit card?"<<endl;
+                cin >> metod;
+                if (metod == "cash")
+                {
+                    double giving;
+                    cout << "You are giving  pounds to shop-assistant (How much?)"<<endl;
+                    cin >> giving ;
+                    
+                    if (giving < total)
+                    {
+                        while (giving < total  )
+                        {
+                            cout << "Shop-assistant: That is incorrect, you need to pay " << total <<" not " << giving <<endl;
+                            cin >>giving;
+                        }
+                    }
+                    
+                    if (giving == total )
+                    {
+                        cout << "Shop-assistant: that is correct."<<endl;
+                        cout << "Shop-assistant: Thank you, have a nice day!"<<endl;
+                        energy --;
+                        position = 1;
+                    }
+                    if (giving >total)
+                    {
+                        double change;
+                        change = giving - total; 
+                        cout << "Shop-assistant: Here is your change."<<endl;
+                        cout << "Shop-assistant gave you "<< change <<" pounds"<<endl;
+                        cout << "Shop-assistant: Thank you, have a nice day!"<<endl;
+                        energy --;
+                        position = 1;
+                        total = 0;
+                    }
+                    
+                }
+                
+                else
+                {
+                    
+                    string action;
+                    while (action !="INSERT" and action != "insert"){cout << "Shop-assistant: INSERT your credit card"<<endl; cin >> action; }
+                    
+                    string pin;
+                    cout << "Write your pin: ";
+                    cin >> pin;
+                    pin = "****";
+                    cout << pin <<endl;
+                    
+                    cout << "Shop-assistant: Thank you, have a nice day!"<<endl;
+                    energy --;
+                    position = 1;
+                    total = 0;
+                    
+                    
+                }
+            }
+            //if user bouht nothing
+            else
+            {
+                cout << "You bought nothing"<<endl;
+                cout << "Shop-assistant: Have a nice day!" <<endl;
+                energy --;
+                position = 1;
+                total = 0;
+                
+            }
+        }
+    }
+    
+};
+    
+    
+    
+int main ()
+{
+    character player;
+    wayToUni place;
+    bar_shop activity;
+   
+   
+    player.position = 1;
+    while (player.day < 10)
+    {
+        cout << "Day: "<<player.day<<" Energy: " << player.energy<<"/2"<<endl;
+        
+        if (player.position==1)
+        {
+        place.where(player.position,player.name);
+        activity.bar_place(player.position,player.age,player.energy,activity.alko);
+        activity.shop_place(player.position, activity.all_products, activity.all_price, activity.nrP, activity.nr, activity.products, activity.total, player.energy);
+        }
+        if (player.energy ==0 ) {player.day++; player.energy = 2;}
+        else {player.day++;}
+        
+    }
+    
+    return 0;
+
+}
