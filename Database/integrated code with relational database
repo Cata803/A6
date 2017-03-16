@@ -23,22 +23,22 @@ void database (string id , string name , int age, double money, int score )
     try
     {
         sqlite::sqlite db( "studentdata.db"); // opens database
-        auto  cur = db.get_statement();
+        auto  cur = db.get_statement(); // Creates a cursor on this connection
     
     
-         cur->set_sql( "INSERT INTO player (id, name, age, money, score) "
-                      "VALUES (?, ?, ?, ?, ?);" );
+         cur->set_sql( "INSERT INTO player (id, name, age, money, score) "	// Inserting
+                      "VALUES (?, ?, ?, ?, ?);" );				//Placeholders
     
         
-         cur->prepare();
+         cur->prepare();	// sends the query to the database.
     
-        cur->bind( 1, id );
-        cur->bind( 2, name );
-        cur->bind( 3, age );
-        cur->bind( 4, money );
-        cur->bind( 5, score );
+        cur->bind( 1, id );		// id value
+        cur->bind( 2, name );		// user name
+        cur->bind( 3, age );		// user age
+        cur->bind( 4, money );		// amount of money user spent in the shop
+        cur->bind( 5, score );		// score that user got from final exam
         
-        cur->step();
+        cur->step();	//gets the first row of results, the first time that step() is called it will also run the SQL query so that there are some results for it to get.
      
        
         
