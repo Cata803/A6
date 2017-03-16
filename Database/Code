@@ -1,0 +1,52 @@
+#include <sqlite3.h>
+using namespace std;
+
+Player::Player() //call constructor
+{
+	this->playerName = "";
+	this->playerDay = 0;
+	this->playerMoneySpent = 0;
+	this->playerAge = 0;
+	this->playerModuleScore = 0;
+}
+
+Player::~Player() //call destructor
+{
+
+}
+
+// Gives the player the values in the table
+void Player::cinit(int playerDay, int playerMoneySpent, int playerAge, int playerModuleScore, string playerName )
+{
+	
+	this->playerName = ""; //Will be automatically updated by the player.
+	this->playerDay = 1; //Sets the day to 1.
+	this->playerMoneySpent = 0; //Will be automatically updated afer the player buys something from the shop.
+	this->playerAge = 19;  //Sets the age of the player to 19.
+	this->playerModuleScore = 0; //Will be automatically updated after the player takes "the final exam".
+	cout << this->playerName;
+
+}
+
+int Player::db_build()
+{
+	sqlite3 *db;
+	int rc; 
+	const char* sql; 
+	rc = sqlite3_open("player.db", &db);
+
+	// Creation of the SQL table
+	sql = "CREATE TABLE Player("
+		"ID INT PRIMARY        KEY      NOT NULL,"
+		"Name            TEXT     NOT NULL,"
+		"Age          INT     NOT NULL,"
+		"Day          INT     NOT NULL,"
+    "Money_Spent          INT     NOT NULL,"
+    "Module_Score          INT     NOT NULL,"
+    ;
+
+	// Execution of the SQL statement
+	rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+	sqlite3_close(db);
+	return 0;
+}
