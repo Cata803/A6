@@ -41,8 +41,8 @@ int Player::db_build()
 		"Name            TEXT     NOT NULL,"
 		"Age          INT     NOT NULL,"
 		"Day          INT     NOT NULL,"
-    "Money_Spent          INT     NOT NULL,"
-    "Module_Score          INT     NOT NULL,"
+    		"Money_Spent          INT     NOT NULL,"
+    		"Module_Score          INT     NOT NULL,"
     ;
 
 	// Execution of the SQL statement
