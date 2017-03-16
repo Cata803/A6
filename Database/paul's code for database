@@ -1,0 +1,31 @@
+// for shop table
+void dshop (string id , double money )
+{
+    try
+    {
+        sqlite::sqlite db( "studentdata.db"); // opens database
+        auto  cur = db.get_statement();
+    
+    
+         cur->set_sql( "INSERT INTO shop (id, money) "
+                      "VALUES (?, ?);" );
+    
+        
+         cur->prepare();
+    
+        cur->bind( 1, id);
+        cur->bind( 2, money);
+        
+        
+     
+        
+        
+        cur->step();
+    }
+    catch( sqlite::exception e )
+    {
+        cerr << e.what() << endl;
+        return;
+    }
+    
+}
