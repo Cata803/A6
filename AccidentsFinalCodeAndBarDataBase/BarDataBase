@@ -1,0 +1,52 @@
+//To run the code with the data base :  g++ --std=c++11 BarDataBase.cpp -o BarDataBase -lsqlite3
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstdint>
+#include <sqlite3.h>
+#include "libsqlite.hpp"
+using namespace std;
+
+// database for bar table
+class character
+{
+   public:
+     int age;
+     string id;
+};   
+
+
+   void dbar (string id , int age )
+   {
+      try
+         {
+              sqlite::sqlite db( "studentdata .db"); // opens database
+              auto  cur = db.get_statement();
+
+               cur->set_sql( "INSERT INTO bar (id, age) "
+                            "VALUES (?, ?);" );
+              cur->prepare();
+              cur->bind( 1, id );
+              cur->bind( 2, age );
+              cur->step();
+         }
+              catch( sqlite::exception e )
+         {
+              cerr << e.what() << endl;
+              return;
+         }
+   }
+   
+
+
+int main()
+{
+    character player;
+   
+    dbar (player.id,player.age);
+    
+   
+   return 0;
+}
